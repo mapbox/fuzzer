@@ -1,0 +1,36 @@
+{
+  "name": "fuzzer",
+  "version": "0.0.0",
+  "description": "a fuzzy input creator for tests",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "random-js": "~1.0.2",
+    "traverse": "~0.6.6",
+    "xtend": "~2.2.0"
+  },
+  "devDependencies": {
+    "tap": "~0.4.8"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tmcw/fuzzer.git"
+  },
+  "keywords": [
+    "fuzzer",
+    "fuzzy",
+    "testing",
+    "mutation"
+  ],
+  "author": "Tom MacWright",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tmcw/fuzzer/issues"
+  },
+  "homepage": "https://github.com/tmcw/fuzzer"
+}
