@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/tmcw/fuzzer.svg?branch=master)](https://travis-ci.org/tmcw/fuzzer)
+
 # fuzzer
 
 A [fuzzer](http://en.wikipedia.org/wiki/Fuzz_testing) for testing. This implements
