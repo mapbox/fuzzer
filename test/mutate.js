@@ -8,38 +8,61 @@ test('mutate object', function(t) {
         height: 72
     });
     t.deepEqual(mutator(), {
-        name: "md7dNjtvYKx"
+        name: "Tom",
+        height: 72
     });
     t.deepEqual(mutator(), {
+        name: "Tom",
+        height: 72
     });
 
     var fc = fuzzer.mutate.object({
-        type: 'FeatureCollection',
-        features: [
-            {
-                type: 'Feature',
-                geometry: {
-                    type: 'Point',
-                    coordinates: [0, 0]
+            "type" : "FeatureCollection", // != "itcellxUyrLzniju"
+            "features" : [
+              {
+                "type" : "Feature", // != undefined
+                "geometry" : {
+                  "type" : "Point", // != "oJyXZDttoNG"
+                  "coordinates" : [
+                    0, // != undefined
+                    0 // != undefined
+                  ]
                 }
-            }
-        ]
-    });
+              }
+            ]
+          });
     t.deepEqual(fc(), {
-        "type" : "itcellxUyrLzniju",
-        "features" : [{
-            "geometry" : {
-                "type" : "oJyXZDttoNG",
-                "coordinates" : []
-            }
-        }]
-    });
+            "type" : "FeatureCollection", // != "itcellxUyrLzniju"
+            "features" : [
+              {
+                "type" : "Feature", // != undefined
+                "geometry" : {
+                  "type" : "Point", // != "oJyXZDttoNG"
+                  "coordinates" : [
+                    0, // != undefined
+                    0 // != undefined
+                  ]
+                }
+              }
+            ]
+          });
     t.deepEqual(fc(), {
-        type: 'oCerutk0xJ_lY3CI'
-    });
+            "type" : "FeatureCollection", // != "oCerutk0xJ_lY3CI"
+            "features" : [{
+                "geometry" : {
+                  "type" : "Point" // != undefined
+                } // != undefined
+              }] // != undefined
+          });
     t.deepEqual(fc(), {
-        type: 'JM3lUsBaoJ',
-        features: []
-    });
+            "type" : "FeatureCollection", // != "JM3lUsBaoJ"
+            "features" : [
+              {
+                "geometry" : {
+                  "type" : "Point" // != undefined
+                } // != undefined
+              } // != undefined
+            ]
+          });
     t.end();
 });
