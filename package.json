@@ -1,6 +1,6 @@
 {
   "name": "fuzzer",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "a fuzzy input creator for tests",
   "main": "index.js",
   "directories": {
