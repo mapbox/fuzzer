@@ -18,6 +18,11 @@ Generate a mutated version of an object. This does not modify the object
 directly, but returns a modified copy. This mutation will increment and
 decrement numbers, randomize arrays, remove properties, and more.
 
+### fuzzer.mutate.string(str)
+
+Generate a mutated version of a string, with reversed, removed, and added
+characters.
+
 ### fuzzer.seed(number)
 
 Seed the random number generator `random-js` that determines mutations.

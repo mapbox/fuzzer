@@ -66,3 +66,11 @@ test('mutate object', function(t) {
           });
     t.end();
 });
+
+test('mutate string', function(t) {
+    t.equal(fuzzer.mutate.string('hello'), 'hello');
+    t.equal(fuzzer.mutate.string('hello'), 'hello');
+    t.equal(fuzzer.mutate.string('hello'), 'hello');
+    t.equal(fuzzer.mutate.string('hello'), 'olleh');
+    t.end();
+});

@@ -2,7 +2,7 @@ var Random = require('random-js'),
     xtend = require('xtend'),
     traverse = require('traverse');
 
-var random = new Random(Random.engines.mt19937().autoSeed());
+var random = new Random(Random.engines.mt19937().seed(0));
 
 /**
  * @param _ {number}
@@ -14,6 +14,7 @@ module.exports.seed = function(_) {
 
 module.exports.mutate = {
     object: mutateObject,
+    string: mutateString
 };
 
 function mutateObject(obj) {
@@ -58,18 +59,21 @@ function mutateVal(val) {
  * @returns {string}
  */
 function mutateString(val) {
-    if (random.bool(0.1)) {
-        val = val.split('').reverse().join('');
+    var arr = val.split('');
+    if (random.bool(0.05)) {
+        arr = arr.reverse();
     }
-    if (random.bool(0.1)) {
-        val = val.substr(0, random.integer(0, val.length));
+    if (random.bool(0.25)) {
+        arr.splice(
+            random.integer(1, arr.length),
+            random.integer(1, arr.length));
     }
-    if (random.bool(0.1)) {
-        val = val.substr(random.integer(0, val.length));
+    if (random.bool(0.25)) {
+        var args = [random.integer(1, arr.length), 0]
+            .concat(random.string(random.integer(1, arr.length)).split(''));
+        arr.splice.apply(arr, args);
     }
-    if (random.bool(0.1)) {
-        val += random.string(10);
-    }
+    val = arr.join('');
     return val;
 }
 
