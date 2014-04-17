@@ -1,13 +1,13 @@
 {
   "name": "fuzzer",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "a fuzzy input creator for tests",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "bin": {
-      "fuzz-get": "./bin/fuzz-get"
+    "fuzz-get": "./bin/fuzz-get"
   },
   "dependencies": {
     "random-js": "~1.0.2",
