@@ -6,6 +6,9 @@
   "directories": {
     "test": "test"
   },
+  "bin": {
+      "fuzz-get": "./bin/fuzz-get"
+  },
   "dependencies": {
     "random-js": "~1.0.2",
     "traverse": "~0.6.6",

@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+
+var http = require('http'),
+    url = require('url'),
+    fuzzer = require('../'),
+    xtend = require('xtend');
+
+var input = process.argv[2],
+    parsed = url.parse(input);
+
+function run() {
+    var mutatedPath = fuzzer.mutate.string(parsed.path);
+    if (mutatedPath[0] !== '/') mutatedPath = '/' + mutatedPath;
+    var mutated = xtend(parsed, {
+        path: mutatedPath
+    });
+    http.get(mutated, function(res) {
+        console.log('HTTP' + res.statusCode + ':' + mutatedPath);
+        res.on('end', function() { });
+        res.on('data', function(e) { });
+        res.on('error', function(e) { });
+        setTimeout(run, 10);
+    });
+}
+
+run();

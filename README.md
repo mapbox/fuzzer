@@ -29,6 +29,21 @@ Seed the random number generator `random-js` that determines mutations.
 By calling this function with the same number, you can generate the same
 mutations consistently.
 
+## fuzz-get
+
+If you install this globally it provides a single cli utility called `fuzz-get`.
+
+    npm install -g fuzzer
+    fuzz-get "./bin/fuzz-get "http://localhost:8889/foo/bar/your/rest/api"
+
+This will run mutated requests against your server continously - it will mutate the
+path requested into other incorrect requests, and log in the form:
+
+    HTTP200:/foo/bar/your/rest/api
+    HTTP404:/foo/baryour/rest/api
+
+So you can pipe into `| grep "HTTP500"` if you wish.
+
 ## example
 
 ```js
