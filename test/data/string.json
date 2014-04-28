@@ -1,0 +1,15 @@
+{
+    "input": "hello",
+    "output": [
+        "oll",
+        "hello",
+        "hello",
+        "heo",
+        "hello",
+        "helROll",
+        "hello",
+        "hellZ4o",
+        "hellocdEIR",
+        "helo"
+    ]
+}

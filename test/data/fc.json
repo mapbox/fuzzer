@@ -1,0 +1,46 @@
+{
+    "input": {
+        "type": "FeatureCollection",
+        "features": []
+    },
+    "output": [
+        {
+            "type": "FeatureCollection",
+            "features": []
+        },
+        {
+            "type": "FeatureCollection",
+            "features": []
+        },
+        {
+            "type": "FeatureCollection",
+            "features": []
+        },
+        {
+            "type": "FeatureCollection",
+            "features": []
+        },
+        {
+            "type": "FeatureCollection"
+        },
+        {
+            "type": "FeatureCollection"
+        },
+        {
+            "type": "FeatureCollection",
+            "features": []
+        },
+        {
+            "type": "FeatureCollection",
+            "features": []
+        },
+        {
+            "type": "FeatureCollection",
+            "features": []
+        },
+        {
+            "type": "FeatureCollection",
+            "features": []
+        }
+    ]
+}
