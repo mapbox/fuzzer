@@ -10,7 +10,7 @@
     "fuzz-get": "./bin/fuzz-get"
   },
   "dependencies": {
-    "random-js": "~1.0.2",
+    "random-js": "1.0.2",
     "traverse": "~0.6.6",
     "xtend": "~2.2.0"
   },
