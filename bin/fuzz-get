@@ -11,16 +11,21 @@ var input = process.argv[2],
 function run() {
     var mutatedPath = fuzzer.mutate.string(parsed.path);
     if (mutatedPath[0] !== '/') mutatedPath = '/' + mutatedPath;
-    var mutated = xtend(parsed, {
-        path: mutatedPath
-    });
-    http.get(mutated, function(res) {
-        console.log('HTTP' + res.statusCode + ':' + mutatedPath);
-        res.on('end', function() { });
-        res.on('data', function(e) { });
-        res.on('error', function(e) { });
-        setTimeout(run, 10);
-    });
+    if (mutatedPath === parsed.path) {
+    	setTimeout(run, 10);
+    }
+    else {
+	    var mutated = xtend(parsed, {
+	        path: mutatedPath
+	    });
+	    http.get(mutated, function(res) {
+	        console.log('HTTP' + res.statusCode + ':' + mutatedPath);
+	        res.on('end', function() { });
+	        res.on('data', function(e) { });
+	        res.on('error', function(e) { });
+	        setTimeout(run, 10);
+	    });
+    }
 }
 
 run();
