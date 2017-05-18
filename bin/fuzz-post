@@ -1,0 +1,54 @@
+#!/usr/bin/env node
+
+const pkg = require('../package.json')
+const colors = require('colors')
+const {runPosts} = require('../src/http-fuzzer')
+const argUrl = process.argv[2]
+const argJson = process.argv[3]
+const argTotalRuns = process.argv[4] || 100
+const argTimeout = process.argv[5] || 200
+const verbose = true
+
+function usage () {
+  console.log('Usage: fuzz-post [url, jsonFile, totalRuns, timeout]')
+  console.log('')
+  console.log('Example:')
+  console.log('  fuzz-post http://localhost:1337/post?code=201 data.json 500 200')
+}
+
+console.log('')
+if (process.argv.length === 2) {
+  usage()
+  process.exit(0)
+}
+
+console.log('URL: ', colors.cyan(argUrl))
+if (argUrl === undefined) {
+  console.log(colors.red('URL to send POST request missing!\n'))
+  usage()
+  process.exit(127)
+}
+
+if (argJson === undefined) {
+  console.log(colors.red('Filepath to a JSON file missing!\n'))
+  usage()
+  process.exit(127)
+}
+
+if (verbose) {
+  console.log(colors.cyan('fuzz-post v' + pkg.version))
+}
+
+let data = null
+try {
+  data = require(argJson)
+} catch (e) {
+  console.log(colors.red('Read Error', e))
+  process.exit(127)
+}
+console.log('INPUT PATH:', colors.cyan(argJson))
+console.log('INPUT JSON:')
+console.log(colors.cyan(JSON.stringify(data, '', 2)))
+
+console.log('TOTAL RUNS:', colors.cyan(argTotalRuns))
+runPosts(argUrl, data, argTotalRuns, argTimeout, verbose)
