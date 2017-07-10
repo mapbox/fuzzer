@@ -21,7 +21,7 @@
     "tap": "~0.4.8"
   },
   "scripts": {
-    "test": "tap test/*.js"
+    "test": "tap test/*.js",
     "testserver": "node ./fixtures/server/server.js"
   },
   "repository": {
