@@ -7,7 +7,8 @@
     "test": "test"
   },
   "bin": {
-    "fuzz-get": "./bin/fuzz-get"
+    "fuzz-get": "./bin/fuzz-get",
+    "fuzz-post": "./bin/fuzz-post"
   },
   "dependencies": {
     "colors": "^1.1.2",
