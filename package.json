@@ -7,10 +7,14 @@
     "test": "test"
   },
   "bin": {
-    "fuzz-get": "./bin/fuzz-get"
+    "fuzz-get": "./bin/fuzz-get",
+    "fuzz-post": "./bin/fuzz-post"
   },
   "dependencies": {
+    "colors": "^1.1.2",
+    "express": "^4.15.3",
     "random-js": "1.0.2",
+    "request": "^2.81.0",
     "traverse": "~0.6.6",
     "xtend": "~2.2.0"
   },
@@ -18,7 +22,8 @@
     "tap": "~0.4.8"
   },
   "scripts": {
-    "test": "tap test/*.js"
+    "test": "tap test/*.js",
+    "testserver": "node ./fixtures/server/server.js"
   },
   "repository": {
     "type": "git",

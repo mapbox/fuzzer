@@ -1,0 +1,9 @@
+{
+  "visible": true,
+  "shape": "rect",
+  "color": "00ff00",
+  "position": {
+    "x": 10.0,
+    "y": 20.0
+  }
+}
